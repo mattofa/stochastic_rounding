@@ -36,7 +36,6 @@ void writeToCSV(const double *avgs, const char *filename, const long int K)
     if (i < K/1000 - 1)
       fprintf(file, ", ");
   }
-  // fprintf(file, "\n"); // print newline
   fclose(file);
 }
 
@@ -173,8 +172,8 @@ int main() {
 
 
   // Print out the average of all rounded values to a file as csv
-  writeToCSV(sr_avgs, "sr_error.csv", K);
-  writeToCSV(sr_alt_avgs, "alt_sr_error.csv", K);
+  writeToCSV(sr_avgs, "results/sr_error.csv", K);
+  writeToCSV(sr_alt_avgs, "results/alt_sr_error.csv", K);
 
   
   // Check that SR_alternative function is correct by comparing the probabilities
@@ -244,7 +243,7 @@ int main() {
 
   // write the lists to a csv file
   // open file
-  FILE *file = fopen("harmonic_errors.csv", "w");
+  FILE *file = fopen("results/harmonic_errors.csv", "w");
   if (file == NULL) {
     printf("Error opening file");
     return 0;

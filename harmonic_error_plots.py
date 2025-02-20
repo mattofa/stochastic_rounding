@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from decimal import Decimal
 
-df = pd.read_csv("harmonic_errors.csv", header=None).T
+df = pd.read_csv("results/harmonic_errors.csv", header=None).T
 print(df.head())
 
 # split the data frame into columns
@@ -28,5 +28,5 @@ plt.xlabel("Log of iteration x10 -6")
 plt.ylabel("Log of Absolute Error")
 plt.title("Absolute Errors of Harmonic Series with regards to Iteration")
 plt.legend()
-plt.savefig("harmonic_errors.png")
+plt.savefig("figures/harmonic_errors.png")
 plt.show()
